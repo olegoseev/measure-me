@@ -98,6 +98,10 @@
                     }]
                 }
             };
+            if(this.chart !== null) {
+            	this.chart.destroy();
+            	this.chart = null;
+            }
             this.chart = Chart.Bar(elementId, { options: options, data: data });
         },
         flushData: function () {

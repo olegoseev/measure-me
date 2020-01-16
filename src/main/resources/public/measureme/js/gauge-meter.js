@@ -13,10 +13,13 @@ const gaugeMeter = function(){
 	var gaugeOptions = {min: 0, max: 100, yellowFrom: 80, yellowTo: 90,
             redFrom: 90, redTo: 100, minorTicks: 5};
 
-	var gauge;
-	var gaugeData;
+	var gauge = null;
+	var gaugeData = null;
 	
 	function init() {
+		if(gauge !== null) {
+			gauge.clearChart();
+		}
 		google.charts.setOnLoadCallback(drawGauge);
 	}
 	

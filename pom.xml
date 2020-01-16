@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.osevol.measure-me</groupId>
 	<artifactId>measure-me</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.1-SNAPSHOT</version>
 	<name>measure-me</name>
 	<description>Simple spring-boot application to measure and store websites response time</description>
 

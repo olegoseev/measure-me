@@ -33,6 +33,7 @@ const mainCtrl = function(){
 	
 	const startBtn = document.querySelector('#start');
 	const siteSelector = document.querySelector('#websites');
+	const appInfoLink = document.querySelector('#appinfo');
 	const inputFields = document.querySelectorAll('.input-field');
 	const checkInterval = document.querySelector('#interval');
 	const websiteUrl = document.querySelector('#url');
@@ -198,6 +199,7 @@ const mainCtrl = function(){
 	    startBtnUpdate('start', 'Start', btnStartColor);
 	    inputFields.forEach(field => field.disabled = false);
 	    siteSelector.disabled = false;
+	    appInfoLink.classList.remove('disable-a');
 	}
 
 	// /////////////////////////////////////////////////////////////
@@ -206,6 +208,7 @@ const mainCtrl = function(){
 	    startBtnUpdate('stop', 'Stop', btnStopColor);
 	    inputFields.forEach(field => field.disabled = true);
 	    siteSelector.disabled = true;
+	    appInfoLink.classList.add('disable-a');
 	}
 	
 	function onResize() {
