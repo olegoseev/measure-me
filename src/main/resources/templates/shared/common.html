@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment = "header">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Measure Website Response Time">
+  <meta name="author" content="Oleg Oseev">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MeasureMe</title>
+  <link rel="stylesheet" type="text/css" th:href="@{measureme/css/styles.css}">
+</head>
+
+<body>
+
+
+ <div th:fragment="scripts">
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script th:src="@{measureme/js/Chart.min.js}"></script>
+  <script th:src="@{measureme/js/browser-detect.js}"></script>
+  <script th:src="@{measureme/js/plotter.js}"></script>
+  <script th:src="@{measureme/js/monitor.js}"></script>
+  <script th:src="@{measureme/js/gauge-meter.js}"></script>
+  <script th:src="@{measureme/js/main.js}" ></script>
+  <script type="module" th:src="@{measureme/js/main.bundle.js}" ></script>
+ </div>  
+</body>
+
+</html>

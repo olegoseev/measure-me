@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="shared/common :: header">
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <h1>MeasureMe</h1>
+    </header>
+    <nav id="sidebar">
+      <section class="settings">
+        <label class="text-secondary" for="website">Website</label>
+        <select id="websites" name="websites" onchange="mainCtrl.selected()">
+          <option value="" selected>--Please choose an option--</option>
+          <option th:each="website: ${websiteList}" th:value="${website.name}" th:text="${website.name}"></option>
+        </select>
+      </section>
+      <section class="settings">
+        <label class="text-secondary" for="url">URL</label>
+        <input class="input-field" type="text" id="url" name="url" placeholder="Website Url">
+        <label class="text-secondary" for="interval">Ping Interval</label>
+        <input class="input-field" type="number" id="interval" name="interval" placeholder="Pings per second">
+        <label class="text-secondary" for="threshold">Response Threshold</label>
+        <input class="input-field" type="number" id="threshold" name="threshold" placeholder="Response delay ms">
+        <button id="start" value="start" type="submit">Start</button>
+      </section>
+      <section class="info-block settings text-secondary">
+          <p>Measure Me is a web-site response time meter/monitor.</p>
+          <p>To check the status of the site and check the site response time. Just select the site
+            from the menu above and press START button.</p>
+          <p>It is also possible to type in the web-site URL and set desirable check interval and expected response time.</p>
+          <p>Chart will show real-time measurement as they go and gauges display Min, Max and Average values for the current test session</p>
+      </section>
+    </nav>
+    <main id="main">
+      <section class="chart">
+        <h1 class="chart-title">Realtime Response Time Measurement</h1>
+        <div class="dashboard">
+          <canvas id="bar-chart" aria-label="Website response time chart" role="img"></canvas>
+        </div>
+      </section>
+      <section class="gauge">
+        <h1 class="chart-title">Minimum, Maximum and Average Response Time</h1>
+        <div class="gaugeboard">
+          <div id="gauge-chart"></div>
+        </div>
+      </section>
+    </main>
+  <footer id="footer">
+    <a th:href="@{/appinfo}">App Status</a>
+    <p>Copyright &copy 2018</p>
+  </footer>
+ </div>
+ <div th:replace="shared/common :: scripts"></div>
+</body>
+
+</html>

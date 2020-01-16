@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="shared/common :: header">
+<body>
+  <div id="info-wrapper">
+    <header id="header">
+      <h1>App Service Status</h1>
+    </header>
+    <section id="inner-block">
+      <div class="info-box a">
+        <table>
+          <tr>
+            <td class="bold text-secondary">Status:</td>
+            <td class="bold pl" id="healthStatus"></td>
+          </tr>
+          <tr>
+            <td>Disk space:</td>
+          </tr>
+          <tr>
+            <td>Total:</td>
+            <td class="bold pl" id="dskTotal"></td>
+          </tr>
+          <tr>
+            <td>Free:</td>
+            <td class="bold pl" id="dskFree"></td>
+          </tr>
+          <tr>
+            <td>Threshold:</td>
+            <td class="bold pl" id="dskThreshold"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="info-box b">
+        <table>
+          <tr>
+            <td class="bold text-secondary">JVM Status</td>
+          </tr>
+          <tr>
+            <td>UP time:</td>
+            <td class="bold pl" id="jvmUp"></td>
+          </tr>
+          <tr>
+            <td>CPU usage:</td>
+            <td class="bold pl" id="jvmCpu"></td>
+          </tr>
+          <tr>
+            <td>Total Memory:</td>
+            <td class="bold pl" id="jvmMemory"></td>
+          </tr>
+          <tr>
+            <td>Memory used:</td>
+            <td class="bold pl" id="jvmMemoryUsed"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="info-box c">
+        <table>
+          <tr>
+            <td class="bold text-secondary">HTTP Server Requests</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>Requests:</td>
+            <td class="bold pl" id="reqCnt"></td>
+          </tr>
+          <tr>
+            <td>Total time:</td>
+            <td class="bold pl" id="reqTotalTime"></td>
+          </tr>
+          <tr>
+            <td>Max time:</td>
+            <td class="bold pl" id="reqMaxTime"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="info-box d">
+        <table>
+          <tr>
+            <td class="bold text-secondary">Database:</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>Status:</td>
+            <td class="bold pl" id="dbStatus"></td>
+          </tr>
+          <tr>
+            <td>Database:</td>
+            <td class="bold pl" id="dbName"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="info-box e">
+        <table>
+          <tr>
+            <td class="bold text-secondary">Threads</td>
+          </tr>
+          <tr>
+            <td>Live:</td>
+            <td class="bold pl" id="thrdLive"></td>
+          </tr>
+          <tr>
+            <td>Live daemon:</td>
+            <td class="bold pl" id="thrdDaemon"></td>
+          </tr>
+          <tr>
+            <td>Peak:</td>
+            <td class="bold pl" id="thrdPeak"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="info-box f">
+        <table>
+          <tr>
+            <td class="bold text-secondary">Home Page Requests</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>Requests:</td>
+            <td class="bold pl" id="homeCnt"></td>
+          </tr>
+          <tr>
+            <td>Total time:</td>
+            <td class="bold pl" id="homeTotalTime"></td>
+          </tr>
+          <tr>
+            <td>Max time:</td>
+            <td class="bold pl" id="homeMaxTime"></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <footer id="footer">
+      <a th:href="@{/}">Back</a>
+      <p>Copyright &copy 2018</p>
+    </footer>
+  </div>
+  <script th:src="@{measureme/js/appinfo.js}"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+$primary-color: #feda75;
+$secondary-color: #cf561a;
+
+$background-color: #fff;
+$nav-color-dark: #437c90;
+
+$inner-header-color: $secondary-color;// #7295bd;
+
+$input-border-color: #aaa;
+$input-border-focus-color: #9ec8f0;
+
+$gauge-image: url(../image/bgline.png);
+
+@mixin box {
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 2px rgba(#333, 0.3);
+}
+
+@mixin board {
+    position: relative;
+    margin: 0;
+    width: 90%;
+    height: 80%;
+}
+
+// Media Query Mixins
+
+@mixin mediaSm {
+  @media screen and (max-width: 560px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin background {
+  &.gaugeboard {
+    background: $gauge-image;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
