@@ -33,9 +33,9 @@ spring:
   thymeleaf:
     cache: false
   datasource:
-    username: user
+    username: username
     password: password
-    url: ""  jpa:
+    url: jdbc:mysql://NUC-W10P:63306/measure_me?useSSL=false&allowPublicKeyRetrieval=true  jpa:
     show-sql: true
     properties: 
       hibernate: 
@@ -56,14 +56,15 @@ logging:
 spring:
   profiles:
   - production
-# needs to populate at runtime  datasource:    username: ""    password: ""    url: ""
+# needs to populate at runtime  datasource:    username: username    password: password    url: jdbc:mysql://localhost:3306/measure_me?useSSL=false&allowPublicKeyRetrieval=true
+
     
 # logback file output
 logging:
   level:
     root: warn
-    org.hibernate: error
-    org.springframework: error
+    org.hibernate: info
+    org.springframework: info
     
 
 server:
